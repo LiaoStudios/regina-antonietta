@@ -1,0 +1,394 @@
+<!DOCTYPE html><html lang="it"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Volpi | Pizzeria Contemporanea</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/general-sans');
+
+        :root {
+            --accent-orange: #FF8C42;
+            --accent-red: #E63946;
+            --bg-dark: #0f0f1b;
+            --bg-nav: #1a1a2e;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'Bebas Neue', cursive;
+        }
+
+        .geometric-bg {
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 140, 66, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(230, 57, 70, 0.05) 0%, transparent 40%);
+        }
+
+        .skew-box {
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+        }
+
+        .diagonal-bg {
+            clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+        }
+
+        /* Intro Animation */
+        #intro-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-dark);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeOutIntro 0.6s forwards 2.8s;
+        }
+
+        .shape {
+            position: absolute;
+            background: var(--accent-orange);
+            opacity: 0;
+            animation: shapeReveal 2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        }
+
+        @keyframes shapeReveal {
+            0% { transform: scale(0) rotate(0deg); opacity: 0; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+            100% { transform: scale(0.5) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes fadeOutIntro {
+            to { opacity: 0; pointer-events: none; }
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .orange-glow {
+            box-shadow: 0 10px 30px -10px rgba(255, 140, 66, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen" data-sd-id="1">
+        <!-- Intro Animation -->
+        <div id="intro-overlay" data-sd-id="2">
+            <div class="relative w-64 h-64 flex items-center justify-center" data-sd-id="3">
+                <div class="shape w-32 h-32 rounded-full" style="animation-delay: 0.1s; background: var(--accent-orange);" data-sd-id="4"></div>
+                <div class="shape w-24 h-24 rotate-45" style="animation-delay: 0.3s; background: var(--accent-red);" data-sd-id="5"></div>
+                <div class="shape w-40 h-2" style="animation-delay: 0.5s; background: white;" data-sd-id="6"></div>
+                
+                <div class="relative z-10 opacity-0" style="animation: logoAppear 0.8s forwards 1.8s;" data-sd-id="7">
+                    <iconify-icon icon="ph:fox-fill" class="text-6xl text-white mb-2"></iconify-icon>
+                    <div class="font-display text-4xl tracking-tighter text-center" data-sd-id="8">LE VOLPI</div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            @keyframes logoAppear { to { opacity: 1; transform: scale(1.1); } }
+        </style>
+
+        <!-- Header -->
+        <header class="fixed top-0 w-full z-50 px-6 py-6 transition-all duration-300" id="main-header" data-sd-id="9">
+            <nav class="max-w-[1440px] mx-auto flex items-center justify-between" data-sd-id="10">
+                <a href="#" id="nav-logo-link" class="flex items-center gap-2" data-sd-id="11">
+                    <div class="bg-orange-500 p-1.5 rotate-12" data-sd-id="12">
+                        <iconify-icon icon="ph:fox-bold" class="text-2xl text-white -rotate-12"></iconify-icon>
+                    </div>
+                    <span class="font-display text-3xl tracking-tighter uppercase text-white" data-sd-id="13">Le Volpi</span>
+                </a>
+
+                <div class="hidden lg:flex items-center gap-12" data-sd-id="14">
+                    <a href="#hero" id="nav-home" class="text-xs font-bold uppercase tracking-widest hover:text-orange-400 transition-colors" data-sd-id="15">Home</a>
+                    <a href="#specialties" id="nav-specialties" class="text-xs font-bold uppercase tracking-widest hover:text-orange-400 transition-colors" data-sd-id="16">Passione</a>
+                    <a href="#menu" id="nav-menu" class="text-xs font-bold uppercase tracking-widest hover:text-orange-400 transition-colors" data-sd-id="17">Menu</a>
+                    <a href="#storia" id="nav-storia" class="text-xs font-bold uppercase tracking-widest hover:text-orange-400 transition-colors" data-sd-id="18">Storia</a>
+                </div>
+
+                <div class="flex items-center gap-6" data-sd-id="19">
+                    <a href="#prenota" id="nav-cta" class="bg-[#E63946] text-white px-8 py-3 font-bold uppercase text-[10px] tracking-[0.2em] skew-x-[-12deg] hover:bg-white hover:text-black transition-all" data-sd-id="20">
+                        <span class="inline-block skew-x-[12deg]" data-sd-id="21">Prenota Tavolo</span>
+                    </a>
+                    <button class="lg:hidden text-white text-3xl" data-sd-id="22">
+                        <iconify-icon icon="lucide:menu"></iconify-icon>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <main class="geometric-bg" data-sd-id="23">
+            <!-- Hero Section -->
+            <section id="hero" class="relative h-screen flex items-center overflow-hidden pt-20" data-sd-id="24">
+                <div class="absolute right-0 top-0 w-7/12 h-full z-0" data-sd-id="25">
+                    <div class="absolute inset-0 bg-gradient-to-r from-bg-dark via-bg-dark/40 to-transparent z-10" data-sd-id="26"></div>
+                    <img src="https://images.unsplash.com/photo-1593560708920-61dd72c4a04e?auto=format&amp;fit=crop&amp;q=80&amp;w=1200" class="w-full h-full object-cover" alt="Modern Pizza" data-sd-id="27">
+                </div>
+
+                <div class="container mx-auto px-8 relative z-20" data-sd-id="28">
+                    <div class="max-w-3xl" data-sd-id="29">
+                        <div class="w-20 h-1 bg-orange-500 mb-8" data-sd-id="30"></div>
+                        <h1 class="text-[120px] font-display leading-[0.8] mb-8 uppercase tracking-tighter" data-sd-id="31">
+                            La Pizza <br>
+                            <span class="text-[#FF8C42] italic" data-sd-id="32">Contemporanea.</span>
+                        </h1>
+                        <p class="text-xl text-gray-400 max-w-lg mb-12 font-light leading-relaxed border-l-4 border-red-500 pl-6" data-sd-id="33">
+                            Oltre la tradizione. Ingredienti di ricerca, impasti a lunga maturazione e un'anima ribelle. 
+                        </p>
+                        <div class="flex gap-6" data-sd-id="34">
+                            <a href="#menu" id="hero-cta-main" class="bg-orange-500 text-white px-10 py-5 font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all orange-glow" data-sd-id="35">
+                                Esplora il Menu
+                            </a>
+                            <a href="#" id="hero-cta-video" class="flex items-center gap-4 group" data-sd-id="36">
+                                <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-red-500 transition-colors" data-sd-id="37">
+                                    <iconify-icon icon="lucide:play" class="text-xl ml-1"></iconify-icon>
+                                </div>
+                                <span class="text-sm font-bold uppercase tracking-widest" data-sd-id="38">La nostra vision</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute bottom-20 left-8 flex flex-col gap-6 opacity-40" data-sd-id="39">
+                    <a href="#" class="hover:text-orange-500 transition-colors" data-sd-id="40"><iconify-icon icon="brandico:facebook" class="text-xl"></iconify-icon></a>
+                    <a href="#" class="hover:text-orange-500 transition-colors" data-sd-id="41"><iconify-icon icon="brandico:instagram" class="text-xl"></iconify-icon></a>
+                </div>
+            </section>
+
+            <!-- Specialty Grid -->
+            <section id="specialties" class="py-32 px-8 bg-white text-black relative z-10" data-sd-id="42">
+                <div class="container mx-auto" data-sd-id="43">
+                    <div class="flex flex-col md:flex-row justify-between items-end mb-24" data-sd-id="44">
+                        <div class="reveal-on-scroll" data-sd-id="45">
+                            <span class="text-orange-500 font-bold uppercase text-xs tracking-[0.3em] mb-4 block" data-sd-id="46">Identity</span>
+                            <h2 class="text-7xl font-display uppercase tracking-tighter leading-none" data-sd-id="47">L'essenza del gusto</h2>
+                        </div>
+                        <p class="max-w-md text-gray-500 text-lg reveal-on-scroll" data-sd-id="48">
+                            Non siamo la solita pizzeria. Siamo un laboratorio gastronomico dove il fuoco incontra l'arte contemporanea.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-1" data-sd-id="49">
+                        <div class="relative group overflow-hidden h-[600px] reveal-on-scroll" data-sd-id="50">
+                            <img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&amp;fit=crop&amp;q=80&amp;w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-sd-id="51">
+                            <div class="absolute inset-0 bg-black/60 group-hover:bg-orange-500/80 transition-all p-12 flex flex-col justify-between text-white" data-sd-id="52">
+                                <span class="text-6xl font-display opacity-20" data-sd-id="53">01</span>
+                                <div data-sd-id="54">
+                                    <h3 class="text-4xl font-display mb-4 uppercase" data-sd-id="55">Pizza Gourmet</h3>
+                                    <p class="text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity" data-sd-id="56">Impasti 48 ore, farine macinate a pietra, topping d'eccellenza.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden h-[600px] reveal-on-scroll" style="transition-delay: 0.2s" data-sd-id="57">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&amp;fit=crop&amp;q=80&amp;w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-sd-id="58">
+                            <div class="absolute inset-0 bg-black/60 group-hover:bg-red-500/80 transition-all p-12 flex flex-col justify-between text-white" data-sd-id="59">
+                                <span class="text-6xl font-display opacity-20" data-sd-id="60">02</span>
+                                <div data-sd-id="61">
+                                    <h3 class="text-4xl font-display mb-4 uppercase" data-sd-id="62">Brace Viva</h3>
+                                    <p class="text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity" data-sd-id="63">Carni selezionate e pesce freschissimo cotti a fuoco lento.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden h-[600px] reveal-on-scroll" style="transition-delay: 0.4s" data-sd-id="64">
+                            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&amp;fit=crop&amp;q=80&amp;w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-sd-id="65">
+                            <div class="absolute inset-0 bg-black/60 group-hover:bg-black/90 transition-all p-12 flex flex-col justify-between text-white" data-sd-id="66">
+                                <span class="text-6xl font-display opacity-20" data-sd-id="67">03</span>
+                                <div data-sd-id="68">
+                                    <h3 class="text-4xl font-display mb-4 uppercase" data-sd-id="69">Vini &amp; Mix</h3>
+                                    <p class="text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity" data-sd-id="70">Cantina ricercata e pairing audaci per ogni portata.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bold Menu Section -->
+            <section id="menu" class="py-32 px-8 bg-bg-dark" data-sd-id="71">
+                <div class="container mx-auto" data-sd-id="72">
+                    <div class="flex gap-4 mb-20 overflow-x-auto pb-4 scrollbar-hide" data-sd-id="73">
+                        <button class="whitespace-nowrap px-8 py-3 bg-orange-500 font-bold uppercase tracking-widest skew-x-[-12deg]" data-sd-id="74"><span class="inline-block skew-x-[12deg]" data-sd-id="75">Best Sellers</span></button>
+                        <button class="whitespace-nowrap px-8 py-3 border border-white/20 font-bold uppercase tracking-widest skew-x-[-12deg] hover:bg-white hover:text-black transition-all" data-sd-id="76"><span class="inline-block skew-x-[12deg]" data-sd-id="77">Pizza Rossa</span></button>
+                        <button class="whitespace-nowrap px-8 py-3 border border-white/20 font-bold uppercase tracking-widest skew-x-[-12deg] hover:bg-white hover:text-black transition-all" data-sd-id="78"><span class="inline-block skew-x-[12deg]" data-sd-id="79">Pizza Bianca</span></button>
+                        <button class="whitespace-nowrap px-8 py-3 border border-white/20 font-bold uppercase tracking-widest skew-x-[-12deg] hover:bg-white hover:text-black transition-all" data-sd-id="80"><span class="inline-block skew-x-[12deg]" data-sd-id="81">La Griglia</span></button>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-16" data-sd-id="82">
+                        <div class="group reveal-on-scroll flex items-center gap-6" data-sd-id="83">
+                            <div class="w-24 h-24 flex-shrink-0 bg-gray-800 rounded-lg overflow-hidden" data-sd-id="84">
+                                <img src="https://images.unsplash.com/photo-1574071318508-1cdbad80ad38?auto=format&amp;fit=crop&amp;q=80&amp;w=200" class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-sd-id="85">
+                            </div>
+                            <div class="flex-1 flex flex-col justify-between h-full py-2 border-b border-white/10" data-sd-id="86">
+                                <div class="flex justify-between items-end mb-2" data-sd-id="87">
+                                    <h4 class="text-2xl font-display uppercase tracking-wider" data-sd-id="88">Diavola Moderna</h4>
+                                    <span class="text-orange-500 font-bold" data-sd-id="89">€14.0</span>
+                                </div>
+                                <p class="text-gray-500 text-sm" data-sd-id="90">Salame piccante Calabro, fiordilatte, miele al peperoncino, basilico purple.</p>
+                            </div>
+                        </div>
+                        <div class="group reveal-on-scroll flex items-center gap-6" data-sd-id="91">
+                            <div class="w-24 h-24 flex-shrink-0 bg-gray-800 rounded-lg overflow-hidden" data-sd-id="92">
+                                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&amp;fit=crop&amp;q=80&amp;w=200" class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-sd-id="93">
+                            </div>
+                            <div class="flex-1 flex flex-col justify-between h-full py-2 border-b border-white/10" data-sd-id="94">
+                                <div class="flex justify-between items-end mb-2" data-sd-id="95">
+                                    <h4 class="text-2xl font-display uppercase tracking-wider" data-sd-id="96">Tagliata Vulcano</h4>
+                                    <span class="text-orange-500 font-bold" data-sd-id="97">€26.0</span>
+                                </div>
+                                <p class="text-gray-500 text-sm" data-sd-id="98">Controfiletto di Manzo, sale nero di Cipro, rosmarino, affumicatura al rovere.</p>
+                            </div>
+                        </div>
+                        <div class="group reveal-on-scroll flex items-center gap-6" data-sd-id="99">
+                            <div class="w-24 h-24 flex-shrink-0 bg-gray-800 rounded-lg overflow-hidden" data-sd-id="100">
+                                <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&amp;fit=crop&amp;q=80&amp;w=200" class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-sd-id="101">
+                            </div>
+                            <div class="flex-1 flex flex-col justify-between h-full py-2 border-b border-white/10" data-sd-id="102">
+                                <div class="flex justify-between items-end mb-2" data-sd-id="103">
+                                    <h4 class="text-2xl font-display uppercase tracking-wider" data-sd-id="104">La Volpe Bianca</h4>
+                                    <span class="text-orange-500 font-bold" data-sd-id="105">€16.5</span>
+                                </div>
+                                <p class="text-gray-500 text-sm" data-sd-id="106">Stracciatella, granella di pistacchio di Bronte, mortadella IGP, zest di limone.</p>
+                            </div>
+                        </div>
+                        <div class="group reveal-on-scroll flex items-center gap-6" data-sd-id="107">
+                            <div class="w-24 h-24 flex-shrink-0 bg-gray-800 rounded-lg overflow-hidden" data-sd-id="108">
+                                <img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&amp;fit=crop&amp;q=80&amp;w=200" class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-sd-id="109">
+                            </div>
+                            <div class="flex-1 flex flex-col justify-between h-full py-2 border-b border-white/10" data-sd-id="110">
+                                <div class="flex justify-between items-end mb-2" data-sd-id="111">
+                                    <h4 class="text-2xl font-display uppercase tracking-wider" data-sd-id="112">Branzino Croccante</h4>
+                                    <span class="text-orange-500 font-bold" data-sd-id="113">€22.0</span>
+                                </div>
+                                <p class="text-gray-500 text-sm" data-sd-id="114">Filetto di branzino alla griglia, crema di zucchine, fiori di zucca in tempura.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter / CTA -->
+            <section class="py-32 px-8" data-sd-id="115">
+                <div class="container mx-auto max-w-5xl bg-gradient-to-br from-orange-500 to-red-600 p-20 rounded-[40px] relative overflow-hidden text-center" data-sd-id="116">
+                    <iconify-icon icon="ph:fox-fill" class="absolute -bottom-20 -left-20 text-[300px] opacity-10 -rotate-12"></iconify-icon>
+                    <div class="relative z-10" data-sd-id="117">
+                        <h2 class="text-7xl font-display uppercase tracking-tighter mb-6" data-sd-id="118">Vieni a trovarci</h2>
+                        <p class="text-white/80 text-xl max-w-xl mx-auto mb-10" data-sd-id="119">Unisciti alla nostra community per scoprire eventi esclusivi e degustazioni private.</p>
+                        <div class="flex flex-col md:flex-row gap-4 max-w-md mx-auto" data-sd-id="120">
+                            <input type="email" placeholder="La tua email" class="flex-1 px-8 py-4 bg-white/20 border border-white/30 rounded-full text-white placeholder:text-white/60 focus:outline-none focus:bg-white/30" data-sd-id="121">
+                            <button class="px-10 py-4 bg-white text-orange-600 font-bold uppercase tracking-widest rounded-full hover:bg-black hover:text-white transition-all" data-sd-id="122">Iscriviti</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-bg-nav pt-24 pb-12 px-8 border-t border-white/5" data-sd-id="123">
+            <div class="container mx-auto" data-sd-id="124">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20" data-sd-id="125">
+                    <div class="col-span-1 md:col-span-2" data-sd-id="126">
+                        <a href="#" id="footer-logo-link" class="flex items-center gap-3 mb-8" data-sd-id="127">
+                            <div class="bg-orange-500 p-2" data-sd-id="128">
+                                <iconify-icon icon="ph:fox-fill" class="text-4xl text-white"></iconify-icon>
+                            </div>
+                            <span class="font-display text-5xl tracking-tighter uppercase text-white" data-sd-id="129">Le Volpi</span>
+                        </a>
+                        <p class="text-gray-500 max-w-md text-lg leading-relaxed" data-sd-id="130">
+                            La rivoluzione della pizza nel cuore della città. Un connubio di stile contemporaneo e radici profonde nell'eccellenza italiana.
+                        </p>
+                    </div>
+                    <div data-sd-id="131">
+                        <h5 class="font-bold uppercase tracking-[0.2em] text-xs mb-8 text-orange-500" data-sd-id="132">Esplora</h5>
+                        <ul class="space-y-4" data-sd-id="133">
+                            <li data-sd-id="134"><a href="#" id="footer-link-1" class="text-gray-400 hover:text-white transition-colors" data-sd-id="135">Menu Gourmet</a></li>
+                            <li data-sd-id="136"><a href="#" id="footer-link-2" class="text-gray-400 hover:text-white transition-colors" data-sd-id="137">La nostra Brace</a></li>
+                            <li data-sd-id="138"><a href="#" id="footer-link-3" class="text-gray-400 hover:text-white transition-colors" data-sd-id="139">Eventi &amp; Dj Set</a></li>
+                            <li data-sd-id="140"><a href="#" id="footer-link-4" class="text-gray-400 hover:text-white transition-colors" data-sd-id="141">Lavora con noi</a></li>
+                        </ul>
+                    </div>
+                    <div data-sd-id="142">
+                        <h5 class="font-bold uppercase tracking-[0.2em] text-xs mb-8 text-orange-500" data-sd-id="143">Social</h5>
+                        <ul class="space-y-4" data-sd-id="144">
+                            <li data-sd-id="145"><a href="#" id="footer-link-5" class="text-gray-400 hover:text-white transition-colors" data-sd-id="146">Instagram</a></li>
+                            <li data-sd-id="147"><a href="#" id="footer-link-6" class="text-gray-400 hover:text-white transition-colors" data-sd-id="148">Facebook</a></li>
+                            <li data-sd-id="149"><a href="#" id="footer-link-7" class="text-gray-400 hover:text-white transition-colors" data-sd-id="150">TripAdvisor</a></li>
+                            <li data-sd-id="151"><a href="#" id="footer-link-8" class="text-gray-400 hover:text-white transition-colors" data-sd-id="152">Google Reviews</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/5" data-sd-id="153">
+                    <p class="text-gray-600 text-sm" data-sd-id="154">© 2024 Le Volpi - Contemporary Italian Dining.</p>
+                    <div class="flex gap-8 mt-6 md:mt-0" data-sd-id="155">
+                        <a href="#" id="privacy-footer" class="text-gray-600 text-xs uppercase hover:text-white" data-sd-id="156">Privacy</a>
+                        <a href="#" id="terms-footer" class="text-gray-600 text-xs uppercase hover:text-white" data-sd-id="157">Termini</a>
+                        <a href="#" id="cookies-footer" class="text-gray-600 text-xs uppercase hover:text-white" data-sd-id="158">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Header transition
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('bg-bg-nav/95', 'backdrop-blur-md', 'py-4');
+                header.classList.remove('py-6');
+            } else {
+                header.classList.remove('bg-bg-nav/95', 'backdrop-blur-md', 'py-4');
+                header.classList.add('py-6');
+            }
+        });
+
+        // Scroll Reveal
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+        // Parallax Effect for Hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('#hero img');
+            heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+        });
+    </script>
+
+</body></html>

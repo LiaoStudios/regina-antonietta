@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regina Antonietta — Pizzeria d'Asporto a Castel Maggiore</title>
+  <meta name="description" content="Regina Antonietta: vera pizza napoletana d'asporto a Castel Maggiore (BO). Impasti a lunga lievitazione, ingredienti selezionati. Ordina allo 051 2801714.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="Regina Antonietta — Pizzeria d'Asporto">
+  <meta property="og:description" content="La vera pizza napoletana d'asporto a Castel Maggiore. Ordina allo 051 2801714.">
+  <meta property="og:image" content="assets/img/hero.jpg">
+  <meta property="og:locale" content="it_IT">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon-180.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon-512.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { bianco:'#FBF8F3', beige:'#E9DFCE', beiged:'#DCCFB6', nero:'#1A1613', rosso:'#C1272D', rossod:'#8E1B20', oro:'#B08D4C' },
+        fontFamily: { display:['"Playfair Display"','Georgia','serif'], body:['"Plus Jakarta Sans"','sans-serif'] }
+      }}
+    };
+  </script>
+  <style>
+    #main-header { transition: box-shadow .3s ease, padding .3s ease; background: rgba(251,248,243,.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(26,22,19,.07); }
+    #main-header.is-scrolled { box-shadow: 0 6px 24px -18px rgba(26,22,19,.5); }
+  </style>
+
+  <!-- JSON-LD dati struttura attività -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Regina Antonietta",
+    "servesCuisine": "Pizza napoletana",
+    "image": "assets/img/hero.jpg",
+    "telephone": "+39 051 2801714",
+    "email": "pizzeriacastelmaggiore@gmail.com",
+    "priceRange": "€€",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.4",
+      "reviewCount": "980",
+      "bestRating": "5"
+    },
+    "url": "https://regina-antonietta.it",
+    "hasDeliveryMethod": ["http://purl.org/goodrelations/v1#DeliveryModePickUp", "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"],
+    "potentialAction": {
+      "@type": "OrderAction",
+      "target": "https://www.justeat.it/restaurants-regina-antonietta-progresso/menu",
+      "deliveryMethod": ["http://purl.org/goodrelations/v1#DeliveryModePickUp", "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Gramsci 46",
+      "addressLocality": "Castel Maggiore",
+      "addressRegion": "BO",
+      "postalCode": "40013",
+      "addressCountry": "IT"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "11:00", "closes": "14:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "18:00", "closes": "22:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "11:30", "closes": "14:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "18:30", "closes": "22:30" }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/p/Regina-Antonietta-100064087413711/",
+      "https://www.instagram.com/reginaantonietta46/"
+    ]
+  }
+  </script>
+</head>
+<body class="antialiased">
+
+  <!-- Barra asporto -->
+  <div class="bg-nero text-bianco text-center text-[9px] md:text-[10px] tracking-[0.15em] uppercase py-1.5 px-4">
+    Asporto e consegna a domicilio · Via Gramsci 46, Castel Maggiore (BO) · <a href="tel:+390512801714" class="text-oro hover:text-white font-semibold">051 2801714</a>
+  </div>
+
+  <!-- Header -->
+  <header id="main-header" class="sticky top-0 w-full z-50 px-5 md:px-8 py-4">
+    <nav class="relative max-w-[1280px] mx-auto flex items-center justify-between lg:justify-center lg:gap-9">
+      <!-- Nav sinistra (solo desktop) — vicina al logo -->
+      <div class="hidden lg:flex items-center gap-9">
+        <a href="#hero" class="nav-link text-[13px] font-600 tracking-wide text-nero hover:text-rosso transition-colors">Home</a>
+        <a href="#specialita" class="nav-link text-[13px] font-600 tracking-wide text-nero hover:text-rosso transition-colors">Le Pizze</a>
+      </div>
+
+      <!-- Logo: centrato su mobile e desktop -->
+      <a href="#hero" class="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 lg:left-auto flex items-center">
+        <img src="assets/img/logo-trim.png" alt="Regina Antonietta" class="h-16 md:h-[72px] w-auto -my-2">
+      </a>
+      <div class="w-10 lg:hidden" aria-hidden="true"></div>
+
+      <!-- Nav destra (solo desktop) — vicina al logo -->
+      <div class="hidden lg:flex items-center gap-9">
+        <a href="#menu" class="nav-link text-[13px] font-600 tracking-wide text-nero hover:text-rosso transition-colors">Menù</a>
+        <a href="#promo" class="nav-link text-[13px] font-600 tracking-wide text-nero hover:text-rosso transition-colors">Promo</a>
+        <a href="#contatti" class="nav-link text-[13px] font-600 tracking-wide text-nero hover:text-rosso transition-colors">Contatti</a>
+      </div>
+
+      <!-- CTA desktop: ancorata al bordo destro, fuori dal cluster centrale -->
+      <button type="button" onclick="window.openOrderModal()" class="js-order-btn btn-red hidden lg:inline-flex lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 items-center gap-2 px-5 py-3 rounded-full font-700 text-[12px] tracking-wide whitespace-nowrap">
+        <iconify-icon icon="ph:phone-fill"></iconify-icon> Ordina ora
+      </button>
+
+      <!-- Mobile/tablet: CTA + hamburger -->
+      <div class="flex items-center gap-3 lg:hidden">
+        <button type="button" onclick="window.openOrderModal()" class="js-order-btn btn-red hidden sm:inline-flex items-center gap-2 px-5 py-3 rounded-full font-700 text-[12px] tracking-wide">
+          <iconify-icon icon="ph:phone-fill"></iconify-icon> Ordina · 051 2801714
+        </button>
+        <button id="menu-toggle" aria-label="Apri menu" aria-expanded="false" class="text-nero text-3xl w-10 h-10 flex items-center justify-center">
+          <iconify-icon icon="lucide:menu"></iconify-icon>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile nav -->
+    <div id="mobile-nav" class="hidden lg:hidden mt-4 mx-auto max-w-[1280px] bg-bianco rounded-2xl shadow-xl border border-nero/10 p-4">
+      <a href="#hero" class="block px-4 py-3 rounded-lg font-600 hover:bg-beige">Home</a>
+      <a href="#specialita" class="block px-4 py-3 rounded-lg font-600 hover:bg-beige">Le Pizze</a>
+      <a href="#menu" class="block px-4 py-3 rounded-lg font-600 hover:bg-beige">Menù</a>
+      <a href="#promo" class="block px-4 py-3 rounded-lg font-600 hover:bg-beige">Promo</a>
+      <a href="#contatti" class="block px-4 py-3 rounded-lg font-600 hover:bg-beige">Contatti</a>
+      <button type="button" onclick="window.openOrderModal()" class="js-order-btn btn-red mt-2 w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full font-700 text-sm">
+        <iconify-icon icon="ph:phone-fill"></iconify-icon> Ordina ora
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="relative overflow-hidden">
+      <!-- Sfondo fotografico: solo mobile/tablet, sostituito dalla colonna dedicata su desktop -->
+      <div class="absolute inset-0 lg:hidden">
+        <img src="assets/img/hero-3.jpg" alt="Pizza gourmet con salsiccia e grana grattugiato appena sfornata" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-b from-nero/80 via-nero/78 to-nero/88"></div>
+      </div>
+
+      <div class="relative lg:grid lg:grid-cols-2 lg:min-h-[calc(100vh-116px)]">
+        <!-- Testo: overlay su foto in mobile, metà chiara a sinistra su desktop -->
+        <div class="lg:warm-bg flex items-center min-h-[92svh] lg:min-h-0">
+          <div class="w-full max-w-xl mx-auto lg:mx-0 px-6 md:px-12 lg:pl-16 lg:pr-10 py-14 lg:py-20">
+            <span class="inline-flex items-center gap-2 text-oro lg:text-rosso font-700 uppercase tracking-[0.25em] text-xs mb-6">
+              <iconify-icon icon="ph:crown-fill"></iconify-icon> Asporto &amp; domicilio · Castel Maggiore
+            </span>
+            <h1 class="font-display text-bianco lg:text-nero text-6xl sm:text-7xl lg:text-[62px] leading-[0.95] lg:leading-[0.98] font-800 mb-5 lg:mb-6">
+              La vera pizza<br><span class="italic text-oro lg:text-rosso">napoletana</span> da asporto.
+            </h1>
+            <p class="text-sm sm:text-base lg:text-lg text-bianco/85 lg:text-nero/70 max-w-lg mb-7 leading-relaxed border-l-2 border-oro pl-5">
+              Impasti a lunga lievitazione, cotti nel forno e pronti da gustare. Ingredienti scelti e gusto autentico. Asporto e consegna a domicilio a Castel Maggiore.
+            </p>
+            <div class="flex flex-wrap gap-4 mb-8">
+              <a href="#menu" class="btn-red px-8 py-4 rounded-full font-700 uppercase tracking-wide text-sm">Vedi il Menù</a>
+              <button type="button" onclick="window.openOrderModal()" class="js-order-btn border-[1.5px] border-bianco text-bianco hover:bg-bianco hover:text-nero lg:border-nero lg:text-nero lg:hover:bg-nero lg:hover:text-bianco transition-all px-8 py-4 rounded-full font-700 uppercase tracking-wide text-sm inline-flex items-center gap-2">
+                <iconify-icon icon="ph:shopping-bag-fill"></iconify-icon> Ordina ora
+              </button>
+            </div>
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+              <a href="tel:+390512801714" class="inline-flex items-center gap-2 font-700 text-bianco lg:text-nero hover:text-oro lg:hover:text-rosso transition-colors">
+                <iconify-icon icon="ph:phone-fill" class="text-oro lg:text-rosso text-xl"></iconify-icon> 051 2801714
+              </a>
+              <span class="inline-flex items-center gap-1.5 text-sm text-bianco/80 lg:text-nero/60">
+                <iconify-icon icon="ph:star-fill" class="text-oro"></iconify-icon> <strong class="text-bianco lg:text-nero">4,4</strong>/5 · 980+ recensioni (Google e Just Eat)
+              </span>
+              <span class="flex items-center gap-4">
+                <a href="https://www.facebook.com/p/Regina-Antonietta-100064087413711/" target="_blank" rel="noopener" aria-label="Facebook" class="text-bianco/80 lg:text-nero/55 hover:text-oro lg:hover:text-rosso text-2xl transition-colors"><iconify-icon icon="ph:facebook-logo-fill"></iconify-icon></a>
+                <a href="https://www.instagram.com/reginaantonietta46/" target="_blank" rel="noopener" aria-label="Instagram" class="text-bianco/80 lg:text-nero/55 hover:text-oro lg:hover:text-rosso text-2xl transition-colors"><iconify-icon icon="ph:instagram-logo-fill"></iconify-icon></a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- Metà destra: foto full-bleed (desktop) -->
+        <div class="hidden lg:block relative min-h-full">
+          <img src="assets/img/hero-3.jpg" alt="Pizza gourmet con salsiccia e grana grattugiato appena sfornata" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-l from-transparent to-bianco/10"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRISCIA VALORI -->
+    <section class="bg-nero text-bianco py-8">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="flex flex-col items-center gap-2"><iconify-icon icon="ph:timer-fill" class="text-3xl text-oro"></iconify-icon><span class="text-sm font-600">Lunga lievitazione</span></div>
+        <div class="flex flex-col items-center gap-2"><iconify-icon icon="ph:leaf-fill" class="text-3xl text-oro"></iconify-icon><span class="text-sm font-600">Ingredienti scelti</span></div>
+        <div class="flex flex-col items-center gap-2"><iconify-icon icon="ph:shopping-bag-fill" class="text-3xl text-oro"></iconify-icon><span class="text-sm font-600">Asporto &amp; domicilio</span></div>
+        <div class="flex flex-col items-center gap-2"><iconify-icon icon="ph:map-pin-fill" class="text-3xl text-oro"></iconify-icon><span class="text-sm font-600">Castel Maggiore</span></div>
+      </div>
+    </section>
+
+    <!-- SPECIALITÀ -->
+    <section id="specialita" class="py-24 md:py-32 px-6 md:px-8 bg-bianco">
+      <div class="max-w-[1280px] mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+          <div class="reveal">
+            <span class="text-rosso font-700 uppercase text-xs tracking-[0.3em] mb-3 block">Le nostre specialità</span>
+            <h2 class="font-display text-4xl md:text-6xl font-700 leading-none">L'essenza del gusto</h2>
+          </div>
+          <p class="max-w-md text-nero/60 text-lg reveal">
+            Dalla margherita più semplice alle proposte più ricche: ogni pizza nasce da un impasto leggero e digeribile e da ingredienti selezionati.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article class="group relative overflow-hidden rounded-3xl h-[440px] reveal hover-lift">
+            <img src="assets/img/classiche.jpg" alt="Pizza margherita classica con mozzarella e basilico" class="spec-img w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-nero/85 via-nero/20 to-transparent"></div>
+            <div class="absolute inset-0 p-8 flex flex-col justify-end text-bianco">
+              <div>
+                <h3 class="font-display text-3xl font-700 mb-2">Le Classiche</h3>
+                <p class="text-sm text-bianco/80">Margherita, marinara, diavola. La tradizione napoletana come dev'essere.</p>
+              </div>
+            </div>
+          </article>
+          <article class="group relative overflow-hidden rounded-3xl h-[440px] reveal hover-lift" style="transition-delay:.1s">
+            <img src="assets/img/speciali.jpg" alt="Pizza bianca speciale con salsiccia e tartufo" class="spec-img w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-rossod/90 via-rossod/20 to-transparent"></div>
+            <div class="absolute inset-0 p-8 flex flex-col justify-end text-bianco">
+              <div>
+                <h3 class="font-display text-3xl font-700 mb-2">Le Speciali</h3>
+                <p class="text-sm text-bianco/85">Ricette d'autore con salsiccia, tartufo, stracciatella e prodotti di stagione.</p>
+              </div>
+            </div>
+          </article>
+          <article class="group relative overflow-hidden rounded-3xl h-[440px] reveal hover-lift" style="transition-delay:.2s">
+            <img src="assets/img/bianche.jpg" alt="Pizza bianca con ricotta, salsiccia e pomodorini gialli" class="spec-img w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-nero/85 via-nero/20 to-transparent"></div>
+            <div class="absolute inset-0 p-8 flex flex-col justify-end text-bianco">
+              <div>
+                <h3 class="font-display text-3xl font-700 mb-2">Le Bianche</h3>
+                <p class="text-sm text-bianco/80">Senza pomodoro, con fiordilatte, ricotta e ingredienti che sorprendono.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENÙ -->
+    <!-- NB: voci e prezzi indicativi, DA CONFERMARE con il cliente prima del go-live -->
+    <section id="menu" class="py-24 md:py-32 px-6 md:px-8 bg-beige">
+      <div class="max-w-[1280px] mx-auto">
+        <div class="text-center mb-14 reveal">
+          <span class="text-rosso font-700 uppercase text-xs tracking-[0.3em] mb-3 block">Il nostro menù</span>
+          <h2 class="font-display text-4xl md:text-6xl font-700">Scegli la tua pizza</h2>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3 mb-14">
+          <button class="cat-btn is-active px-6 py-2.5 rounded-full font-700 uppercase tracking-wide text-xs" data-filter="all">Tutte</button>
+          <button class="cat-btn px-6 py-2.5 rounded-full font-700 uppercase tracking-wide text-xs" data-filter="rosse">Rosse</button>
+          <button class="cat-btn px-6 py-2.5 rounded-full font-700 uppercase tracking-wide text-xs" data-filter="bianche">Bianche</button>
+          <button class="cat-btn px-6 py-2.5 rounded-full font-700 uppercase tracking-wide text-xs" data-filter="speciali">Speciali</button>
+          <button class="cat-btn px-6 py-2.5 rounded-full font-700 uppercase tracking-wide text-xs" data-filter="fritti">Fritti &amp; Bibite</button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-4">
+          <!-- ROSSE -->
+          <div class="menu-item flex items-center gap-5 py-4 border-b border-nero/10 reveal" data-cat="rosse">
+            <img src="assets/img/menu-rossa.jpg" alt="Margherita" class="w-20 h-20 rounded-xl object-cover flex-shrink-0">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline gap-3"><h4 class="font-display text-xl font-700">Margherita</h4><span class="text-rosso font-700 whitespace-nowrap">€ 6,50</span></div>
+              <p class="text-nero/55 text-sm mt-1">Pomodoro San Marzano, fiordilatte, basilico, olio EVO.</p>
+            </div>
+          </div>
+          <div class="menu-item flex items-center gap-5 py-4 border-b border-nero/10 reveal" data-cat="rosse">
+            <img src="assets/img/menu-rossa.jpg" alt="Diavola" class="w-20 h-20 rounded-xl object-cover flex-shrink-0">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline gap-3"><h4 class="font-display text-xl font-700">Diavola</h4><span class="text-rosso font-700 whitespace-nowrap">€ 8,50</span></div>
+              <p class="text-nero/55 text-sm mt-1">Pomodoro, fiordilatte, salame piccante, basilico.</p>
+            </div>
+          </div>
+          <div class="menu-item flex items-center gap-5 py-4 border-b border-nero/10 reveal" data-cat="rosse">
+            <img src="assets/img/promo.jpg" alt="Salsiccia e patate" class="w-20 h-20 rounded-xl object-cover flex-shrink-0">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline gap-3"><h4 class="font-display text-xl font-700">Salsiccia &amp; Patate</h4><span class="text-rosso font-700 whitespace-nowrap">€ 9,50</span></div>
+              <p class="text-nero/55 text-sm mt-1">Pomodoro, fiordilatte, salsiccia, patate al forno, melanzane.</p>
+            </div>
+          </div>
+
+          <!-- BIANCHE -->
+          <div class="menu-item flex items-center gap-5 py-4 border-b border-nero/10 reveal" data-cat="bianche">
+            <img src="assets/img/menu-speciale.jpg" alt="Bianca salsiccia e ricotta" class="w-20 h-20 rounded-xl object-cover flex-shrink-0">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline gap-3"><h4 class="font-display text-xl font-700">Regina Bianca</h4><span class="text-rosso font-700 whitespace-nowrap">€ 10,00</span></div>
+              <p class="text-nero/55 text-sm mt-1">Fiordilatte, ricotta, salsiccia, pomodorini gialli, pepe.</p>
+            </div>
+          </div>
+          <div class="menu-item flex items-center gap-5 py-4 border-b border-nero/10 reveal" data-cat="bianche">
+            <img src="assets/img/menu-burrata.jpg" alt="Burrata fresca e basilico" class="w-20 h-20 rounded-xl object-cover flex-shrink-0">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline gap-3"><h4 class="font-display text-xl font-700">Burrata &amp; Basilico</h4><span class="text-rosso font-700 whitespace-nowrap">€ 11,00</span></div>
+              <p class="text-nero/55 text-sm mt-1">Base rossa, burrata fresca a crudo, grana, basilico.</p>
+            </div>
+          </div>
+
+          <!-- SPECIALI -->
+          <div class="menu-item flex items-center gap-5 py-4 border-b border-nero/10 reveal" data-cat="speciali">
+            <img src="assets/img/menu-bianca.jpg" alt="Tartufo e salsiccia" class="w-20 h-20 rounded-xl object-cover flex-shrink-0">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline gap-3"><h4 class="font-display text-xl font-700">Tartufo &amp; Salsiccia</h4><span class="text-rosso font-700 whitespace-nowrap">€ 12,50</span></div>
+              <p class="text-nero/55 text-sm mt-1">Fiordilatte, crema al tartufo, salsiccia, scaglie di grana.</p>
+            </div>
+          </div>
+          <div class="menu-item flex items-center gap-5 py-4 border-b border-nero/10 reveal" data-cat="speciali">
+            <img src="assets/img/speciali.jpg" alt="Pizza speciale del mese" class="w-20 h-20 rounded-xl object-cover flex-shrink-0">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline gap-3"><h4 class="font-display text-xl font-700">La Regina</h4><span class="text-rosso font-700 whitespace-nowrap">€ 13,00</span></div>
+              <p class="text-nero/55 text-sm mt-1">La speciale della casa. Chiedi gli ingredienti del momento.</p>
+            </div>
+          </div>
+
+          <!-- FRITTI & BIBITE -->
+          <div class="menu-item flex items-center gap-5 py-4 border-b border-nero/10 reveal" data-cat="fritti">
+            <div class="w-20 h-20 rounded-xl bg-beiged flex items-center justify-center flex-shrink-0"><iconify-icon icon="ph:french-fries-fill" class="text-3xl text-rosso"></iconify-icon></div>
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline gap-3"><h4 class="font-display text-xl font-700">Patate Fritte</h4><span class="text-rosso font-700 whitespace-nowrap">€ 4,00</span></div>
+              <p class="text-nero/55 text-sm mt-1">Croccanti, porzione abbondante.</p>
+            </div>
+          </div>
+          <div class="menu-item flex items-center gap-5 py-4 border-b border-nero/10 reveal" data-cat="fritti">
+            <div class="w-20 h-20 rounded-xl bg-beiged flex items-center justify-center flex-shrink-0"><iconify-icon icon="ph:bottle-fill" class="text-3xl text-rosso"></iconify-icon></div>
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline gap-3"><h4 class="font-display text-xl font-700">Bibite</h4><span class="text-rosso font-700 whitespace-nowrap">€ 2,50</span></div>
+              <p class="text-nero/55 text-sm mt-1">Acqua, bibite in lattina e birra.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center text-nero/45 text-xs mt-10 mb-8">I prezzi e le voci possono variare. Per il menù completo e le disponibilità del giorno chiama allo <a href="tel:+390512801714" class="text-rosso font-600">051 2801714</a>.</p>
+        <div class="text-center">
+          <button type="button" onclick="window.openOrderModal()" class="js-order-btn btn-red inline-flex items-center gap-2 px-9 py-4 rounded-full font-700 uppercase tracking-wide text-sm">
+            <iconify-icon icon="ph:shopping-bag-fill"></iconify-icon> Ordina ora
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROMO PRANZO -->
+    <section id="promo" class="py-24 md:py-32 px-6 md:px-8 bg-bianco">
+      <div class="max-w-5xl mx-auto rounded-[36px] overflow-hidden shadow-xl reveal grid md:grid-cols-2 items-stretch bg-gradient-to-br from-rosso to-rossod text-bianco">
+        <!-- Metà testo -->
+        <div class="relative order-2 md:order-1 pt-16 pb-10 px-10 md:p-14 flex flex-col justify-center overflow-hidden">
+          <img src="assets/img/logo-trim.png" alt="" aria-hidden="true" class="absolute -bottom-14 -left-10 w-[260px] opacity-10 -rotate-12" style="filter:brightness(0) invert(1)">
+          <div class="relative z-10">
+            <span class="inline-block bg-bianco text-rosso font-800 uppercase tracking-widest text-xs px-4 py-1.5 rounded-full mb-5">Promo Pranzo</span>
+            <h2 class="font-display text-4xl md:text-6xl font-800 leading-none mb-5">Pizza + Bibita<br>+ Patate Fritte</h2>
+            <p class="text-bianco/85 text-lg mb-8 max-w-md">Il nostro menù pranzo: una pizza classica (max 2 gusti), una bibita e le patate fritte. Perfetto per la pausa, pronto da asporto.</p>
+            <button type="button" onclick="window.openOrderModal()" class="js-order-btn inline-flex items-center gap-2 bg-bianco text-rosso px-8 py-4 rounded-full font-800 uppercase tracking-wide text-sm hover:bg-nero hover:text-bianco transition-colors">
+              <iconify-icon icon="ph:phone-fill"></iconify-icon> Ordina ora
+            </button>
+          </div>
+        </div>
+        <!-- Metà foto: a tutta altezza, con prezzo come badge ben visibile a cavallo della giunzione -->
+        <div class="relative order-1 md:order-2 min-h-[280px] md:min-h-full">
+          <img src="assets/img/promo-pizza.jpg" alt="Pizza rossa con salsiccia, protagonista della promo pranzo" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-nero/40 via-transparent to-transparent"></div>
+          <div class="absolute z-20 left-1/2 -translate-x-1/2 -bottom-9 md:bottom-auto md:left-0 md:top-10 md:-translate-x-1/2 rotate-[-7deg] bg-bianco text-rosso rounded-full shadow-2xl border-[5px] border-rosso/10 w-28 h-28 md:w-36 md:h-36 flex flex-col items-center justify-center">
+            <span class="text-[10px] md:text-[11px] uppercase tracking-widest font-800 leading-tight">Solo</span>
+            <span class="font-display text-3xl md:text-5xl font-800 leading-none">9,90€</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COME ORDINARE -->
+    <section class="py-24 md:py-32 px-6 md:px-8 bg-nero text-bianco">
+      <div class="max-w-[1280px] mx-auto">
+        <div class="text-center mb-16 reveal">
+          <span class="text-oro font-700 uppercase text-xs tracking-[0.3em] mb-3 block">Asporto &amp; domicilio</span>
+          <h2 class="font-display text-4xl md:text-6xl font-700">Come ordinare</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center reveal">
+            <div class="w-16 h-16 mx-auto rounded-full bg-rosso flex items-center justify-center text-2xl mb-5"><iconify-icon icon="ph:phone-fill"></iconify-icon></div>
+            <h3 class="font-display text-2xl font-700 mb-2">1. Chiama</h3>
+            <p class="text-bianco/60">Telefona allo <a href="tel:+390512801714" class="text-oro font-600">051 2801714</a> e dicci cosa desideri.</p>
+          </div>
+          <div class="text-center reveal" style="transition-delay:.1s">
+            <div class="w-16 h-16 mx-auto rounded-full bg-rosso flex items-center justify-center text-2xl mb-5"><iconify-icon icon="ph:fire-fill"></iconify-icon></div>
+            <h3 class="font-display text-2xl font-700 mb-2">2. Prepariamo</h3>
+            <p class="text-bianco/60">La tua pizza viene sfornata al momento e messa in scatola.</p>
+          </div>
+          <div class="text-center reveal" style="transition-delay:.2s">
+            <div class="w-16 h-16 mx-auto rounded-full bg-rosso flex items-center justify-center text-2xl mb-5"><iconify-icon icon="ph:shopping-bag-fill"></iconify-icon></div>
+            <h3 class="font-display text-2xl font-700 mb-2">3. Ritira o ricevi</h3>
+            <p class="text-bianco/60">Passa a ritirare in Via Gramsci 46 oppure scegli la consegna a domicilio. Buon appetito!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATTI + MAPPA -->
+    <section id="contatti" class="py-24 md:py-32 px-6 md:px-8 bg-bianco">
+      <div class="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-12 items-stretch">
+        <div class="reveal">
+          <span class="text-rosso font-700 uppercase text-xs tracking-[0.3em] mb-3 block">Dove siamo</span>
+          <h2 class="font-display text-4xl md:text-6xl font-700 mb-8">Vieni a trovarci</h2>
+
+          <ul class="space-y-6 mb-8">
+            <li class="flex items-start gap-4">
+              <iconify-icon icon="ph:map-pin-fill" class="text-2xl text-rosso mt-1"></iconify-icon>
+              <div><p class="font-700">Indirizzo</p><p class="text-nero/60">Via Gramsci 46, 40013 Castel Maggiore (BO)</p></div>
+            </li>
+            <li class="flex items-start gap-4">
+              <iconify-icon icon="ph:phone-fill" class="text-2xl text-rosso mt-1"></iconify-icon>
+              <div><p class="font-700">Telefono</p><a href="tel:+390512801714" class="text-nero/60 hover:text-rosso">051 2801714</a></div>
+            </li>
+            <li class="flex items-start gap-4">
+              <iconify-icon icon="ph:envelope-simple-fill" class="text-2xl text-rosso mt-1"></iconify-icon>
+              <div><p class="font-700">Email</p><a href="mailto:pizzeriacastelmaggiore@gmail.com" class="text-nero/60 hover:text-rosso break-all">pizzeriacastelmaggiore@gmail.com</a></div>
+            </li>
+            <li class="flex items-start gap-4">
+              <iconify-icon icon="ph:clock-fill" class="text-2xl text-rosso mt-1"></iconify-icon>
+              <div>
+                <p class="font-700">Orari</p>
+                <p class="text-nero/60">Lunedì: 11:00–14:30 · 18:00–22:30</p>
+                <p class="text-nero/60">Martedì – Domenica: 11:30–14:30 · 18:30–22:30</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="flex flex-wrap gap-3">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Via+Gramsci+46,+Castel+Maggiore+BO" target="_blank" rel="noopener" class="btn-red inline-flex items-center gap-2 px-6 py-3 rounded-full font-700 text-sm"><iconify-icon icon="ph:navigation-arrow-fill"></iconify-icon> Indicazioni</a>
+            <a href="https://www.facebook.com/p/Regina-Antonietta-100064087413711/" target="_blank" rel="noopener" class="btn-outline inline-flex items-center gap-2 px-6 py-3 rounded-full font-700 text-sm"><iconify-icon icon="ph:facebook-logo-fill"></iconify-icon> Facebook</a>
+            <a href="https://www.instagram.com/reginaantonietta46/" target="_blank" rel="noopener" class="btn-outline inline-flex items-center gap-2 px-6 py-3 rounded-full font-700 text-sm"><iconify-icon icon="ph:instagram-logo-fill"></iconify-icon> Instagram</a>
+          </div>
+        </div>
+
+        <div class="reveal rounded-3xl overflow-hidden shadow-xl min-h-[380px] border border-nero/10">
+          <iframe title="Mappa Regina Antonietta" src="https://www.google.com/maps?q=Via%20Gramsci%2046,%20Castel%20Maggiore%20BO&output=embed" width="100%" height="100%" style="border:0;min-height:380px" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="relative bg-nero text-bianco pt-20 pb-10 px-6 md:px-8 border-t border-white/5 overflow-hidden">
+    <img src="assets/img/logo-trim.png" alt="" aria-hidden="true" class="pointer-events-none select-none absolute -bottom-24 -right-16 w-[560px] max-w-none opacity-[0.07]">
+    <div class="relative z-10 max-w-[1280px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div class="md:col-span-2">
+          <div class="mb-6">
+            <img src="assets/img/logo-trim.png" alt="Regina Antonietta" class="h-24 w-auto">
+          </div>
+          <p class="text-bianco/55 max-w-md leading-relaxed">La vera pizza napoletana d'asporto nel cuore di Castel Maggiore. Impasti a lunga lievitazione e ingredienti scelti, per un gusto da regina.</p>
+        </div>
+        <div>
+          <h5 class="font-700 uppercase tracking-[0.2em] text-xs mb-6 text-oro">Naviga</h5>
+          <ul class="space-y-3">
+            <li><a href="#specialita" class="text-bianco/60 hover:text-white transition-colors">Le Pizze</a></li>
+            <li><a href="#menu" class="text-bianco/60 hover:text-white transition-colors">Menù</a></li>
+            <li><a href="#promo" class="text-bianco/60 hover:text-white transition-colors">Promo Pranzo</a></li>
+            <li><button type="button" onclick="window.openOrderModal()" class="js-order-btn text-oro hover:text-white transition-colors font-600 text-left">Ordina ora →</button></li>
+            <li><a href="#contatti" class="text-bianco/60 hover:text-white transition-colors">Contatti</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-700 uppercase tracking-[0.2em] text-xs mb-6 text-oro">Contatti</h5>
+          <ul class="space-y-3 text-bianco/60">
+            <li>Via Gramsci 46<br>Castel Maggiore (BO)</li>
+            <li><a href="tel:+390512801714" class="hover:text-white">051 2801714</a></li>
+            <li class="flex gap-4 pt-2">
+              <a href="https://www.facebook.com/p/Regina-Antonietta-100064087413711/" target="_blank" rel="noopener" aria-label="Facebook" class="text-2xl hover:text-rosso"><iconify-icon icon="ph:facebook-logo-fill"></iconify-icon></a>
+              <a href="https://www.instagram.com/reginaantonietta46/" target="_blank" rel="noopener" aria-label="Instagram" class="text-2xl hover:text-rosso"><iconify-icon icon="ph:instagram-logo-fill"></iconify-icon></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 gap-4">
+        <p class="text-bianco/40 text-sm">© <span id="year"></span> Regina Antonietta · Pizzeria d'asporto</p>
+        <p class="text-bianco/40 text-xs">Asporto e consegna a domicilio · Castel Maggiore (BO)</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Popup Ordina -->
+  <div id="order-modal" class="fixed inset-0 z-[100] hidden items-center justify-center px-4" role="dialog" aria-modal="true" aria-labelledby="order-modal-title">
+    <div id="order-modal-backdrop" onclick="window.closeOrderModal()" class="absolute inset-0 bg-nero/70 backdrop-blur-sm"></div>
+    <div class="relative bg-bianco rounded-3xl shadow-2xl w-full max-w-sm p-8 text-center">
+      <button type="button" id="order-modal-close" onclick="window.closeOrderModal()" aria-label="Chiudi" class="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center text-nero/50 hover:text-nero hover:bg-beige transition-colors text-xl">
+        <iconify-icon icon="lucide:x"></iconify-icon>
+      </button>
+      <img src="assets/img/logo-trim.png" alt="Regina Antonietta" class="h-20 w-auto mx-auto mb-3">
+      <h3 id="order-modal-title" class="font-display text-3xl font-700 mb-2">Come vuoi ordinare?</h3>
+      <p class="text-nero/55 text-sm mb-7">Scegli come completare il tuo ordine da Regina Antonietta.</p>
+      <div class="flex flex-col gap-3">
+        <a href="tel:+390512801714" class="btn-red flex items-center justify-center gap-3 px-6 py-4 rounded-full font-700 uppercase tracking-wide text-sm">
+          <iconify-icon icon="ph:phone-fill" class="text-lg"></iconify-icon> Chiama il ristorante
+        </a>
+        <a href="https://www.justeat.it/restaurants-regina-antonietta-progresso/menu" target="_blank" rel="noopener" class="btn-outline flex items-center justify-center gap-3 px-6 py-4 rounded-full font-700 uppercase tracking-wide text-sm">
+          <iconify-icon icon="ph:shopping-bag-fill" class="text-lg"></iconify-icon> Ordina su Just Eat
+        </a>
+      </div>
+      <p class="text-nero/40 text-xs mt-6">051 2801714 · Via Gramsci 46, Castel Maggiore</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    window.openOrderModal = function () {
+      var m = document.getElementById('order-modal');
+      if (!m) return;
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    };
+    window.closeOrderModal = function () {
+      var m = document.getElementById('order-modal');
+      if (!m) return;
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+      document.body.style.overflow = '';
+    };
+  </script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

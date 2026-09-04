@@ -1,0 +1,72 @@
+/* Regina Antonietta — brand styles & overrides
+   Palette: bianco/beige base · nero contrasto · rosso accento · oro dettaglio */
+:root {
+  --bianco: #FBF8F3;
+  --beige: #E9DFCE;
+  --beige-scuro: #DCCFB6;
+  --nero: #1A1613;
+  --rosso: #C1272D;
+  --rosso-scuro: #8E1B20;
+  --oro: #B08D4C;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background-color: var(--bianco);
+  color: var(--nero);
+  overflow-x: hidden;
+}
+
+.font-display { font-family: 'Playfair Display', Georgia, serif; }
+
+/* soft warm texture behind hero */
+.warm-bg {
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(176, 141, 76, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(193, 39, 45, 0.05) 0%, transparent 45%);
+}
+
+/* thin gold rule */
+.rule-gold { height: 2px; background: linear-gradient(90deg, var(--oro), transparent); }
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(28px); transition: all .8s cubic-bezier(.23,1,.32,1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Hover lift for cards */
+.hover-lift { transition: transform .35s cubic-bezier(.34,1.56,.64,1), box-shadow .35s ease; }
+.hover-lift:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -24px rgba(26,22,19,.35); }
+
+/* Buttons */
+.btn-red {
+  background: var(--rosso); color: #fff;
+  transition: background .25s ease, transform .25s ease;
+}
+.btn-red:hover { background: var(--rosso-scuro); transform: translateY(-2px); }
+
+.btn-outline {
+  border: 1.5px solid var(--nero); color: var(--nero);
+  transition: all .25s ease;
+}
+.btn-outline:hover { background: var(--nero); color: var(--bianco); }
+
+/* Menu category buttons */
+.cat-btn { border: 1.5px solid rgba(26,22,19,.18); transition: all .2s ease; }
+.cat-btn:hover { border-color: var(--rosso); color: var(--rosso); }
+.cat-btn.is-active { background: var(--rosso); border-color: var(--rosso); color: #fff; }
+
+/* image duotone hover on specialty cards */
+.spec-img { filter: saturate(.85) contrast(1.02); transition: filter .6s ease, transform .8s ease; }
+.group:hover .spec-img { filter: saturate(1.1); transform: scale(1.05); }
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hover-lift, .spec-img { transition: none; }
+}
